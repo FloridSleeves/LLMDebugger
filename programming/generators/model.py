@@ -10,8 +10,6 @@ from tenacity import (
 from openai import OpenAI
 from transformers import GPT2Tokenizer, AutoTokenizer
 
-
-starcoder_tokenizer = AutoTokenizer.from_pretrained("bigcode/starcoder")
 MessageRole = Literal["system", "user", "assistant"]
 
 @dataclasses.dataclass()
