@@ -1,7 +1,7 @@
 <img src="assets/ldb-logo5.webp" alt="LDB" width="115" align="left"><div align="center"><h1>LDB: A Large Language Model Debugger via Verifying Runtime Execution Step by Step</h1></div>
 
 <p align="center">
-  <a href="assets/LDB_paper.pdf">
+  <a href="https://arxiv.org/abs/2402.16906">
     <img src="https://img.shields.io/badge/📝-Paper-blue">
   </a>
   <a href="https://github.com/FloridSleeves/LLMDebugger">
@@ -9,7 +9,7 @@
   </a>
 </p>
 
-This repository contains the code and dataset for our paper **LDB: A Large Language Model Debugger via Verifying Runtime Execution Step by Step**.
+This repository contains the code and dataset for our paper [**LDB: A Large Language Model Debugger via Verifying Runtime Execution Step by Step**.](https://arxiv.org/abs/2402.16906)
 
 We introduce 🛠️**LDB**, a novel debugging framework that enables LLMs to refine their generated programs with the runtime execution information. Specifically, LDB immitates how human developers debug programs. It segments the programs into basic blocks and tracks the values of intermediate variables after each block throughout the runtime execution. This allows LLMs to concentrate on simpler code units within the overall execution flow, verify their correctness against the task description block by block, and efficiently pinpoint any potential errors.
 
@@ -97,3 +97,5 @@ If you find our work helpful, please cite us:
       primaryClass={cs.SE}
 }
 ```
+## Acknowledgement
+This implementation is adapted from [Reflexion](https://github.com/noahshinn/reflexion) and [staticfg](https://github.com/coetaur0/staticfg). We thank the authors for releasing their code.
