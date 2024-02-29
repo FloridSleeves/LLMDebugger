@@ -97,5 +97,5 @@ If you find our work helpful, please cite us:
       primaryClass={cs.SE}
 }
 ```
-## Acknowledgement
-This implementation is adapted from [Reflexion](https://github.com/noahshinn/reflexion) and [staticfg](https://github.com/coetaur0/staticfg). We thank the authors for releasing their code.
+## 🙌 Acknowledgement
+Our implementation adapts code from [Reflexion](https://github.com/noahshinn/reflexion) and [staticfg](https://github.com/coetaur0/staticfg). We thank authors of these projects for providing high quality open source code!
