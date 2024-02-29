@@ -7,6 +7,9 @@
   <a href="https://github.com/FloridSleeves/LLMDebugger">
     <img src="https://img.shields.io/badge/👩‍💻-Code-green">
   </a>
+  <a href="https://huggingface.co/spaces/shangdatalab-ucsd/LDB">
+    <img src="https://img.shields.io/badge/🚀-Demo-orange">
+  </a>
 </p>
 
 This repository contains the code and dataset for our paper [**LDB: A Large Language Model Debugger via Verifying Runtime Execution Step by Step**.](https://arxiv.org/abs/2402.16906)
