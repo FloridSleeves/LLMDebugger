@@ -55,9 +55,9 @@ def async_main(
             get_seed(i, item, model, num_items, pass_at_k, gen, log_path)
         return
     # divide dataset into several groups
-    pool = Pool(n_proc)
-    args = iter([(i, item, model, num_items, pass_at_k, gen, log_path) for i, item in enumerate_resume(dataset, log_path, testfile=testfile)])
-    pool.starmap(get_seed, args)
+    with Pool(n_proc) as pool:
+        args = iter([(i, item, model, num_items, pass_at_k, gen, log_path) for i, item in enumerate_resume(dataset, log_path, testfile=testfile)])
+        pool.starmap(get_seed, args)
 
 def run_simple(
         dataset: List[dict],

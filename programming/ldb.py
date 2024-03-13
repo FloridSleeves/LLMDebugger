@@ -126,7 +126,7 @@ def run_ldb(
         for item in args:
             debug(*item)
     else:
-        pool = Pool(n_proc)
-        pool.starmap(debug, args)
+        with Pool(n_proc) as pool:
+            pool.starmap(debug, args)
     print("Accuracy:", count_solved(log_path))
     

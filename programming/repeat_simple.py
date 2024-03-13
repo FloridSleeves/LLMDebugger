@@ -54,9 +54,9 @@ def async_main(
     num_success = 0
     # divide dataset into several groups
     n_proc = 10
-    pool = Pool(n_proc)
-    args = iter([(i, item, model, is_leetcode, num_items, max_iters, gen, log_path) for i, item in enumerate_resume(dataset, log_path, testfile=testfile)])
-    pool.starmap(get_seed, args)
+    with Pool(n_proc) as pool:
+        args = iter([(i, item, model, is_leetcode, num_items, max_iters, gen, log_path) for i, item in enumerate_resume(dataset, log_path, testfile=testfile)])
+        pool.starmap(get_seed, args)
 
 def run_repeat_simple(
         dataset: List[dict],
