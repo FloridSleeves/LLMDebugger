@@ -83,6 +83,52 @@ LDB automatically sets up the connection to your local servers when you specify 
 
 If your server port is not the default `8000`, please set the option `--port` in `run_simple.sh` or `run_ldb.sh` to your local server port.
 
+### Use LDB API directly
+LDB provides APIs for debugging and generating code with the debugging messages:
+
+```
+class PyGenerator:
+  ldb_debugldb_debug(self, prompt: str, prev_func_impl: str, failed_test: str, entry: str, model: ModelBase, prev_msg: List[Message], dataset_type: str = "", level: str = "block")
+  Args:
+        prompt (str): Text description or the code to be translated.
+        prev_func_impl (str): Implementation of the previous function.
+        failed_test (str): One failed test.
+        entry (str): Entry point where debugging is initiated.
+        model (ModelBase): Model used for debugging. The values could be 'gpt-3.5-turbo-1106', 'gpt-4-1106-preview', 'StarCoder', 'CodeLlama'.
+        prev_msg (List[Message]): Previous debugging messages and information.
+        dataset_type (str, optional): Type of dataset being processed. The values could be 'HumanEval' for text-to-code tasks, and 'TransCoder' for C++-to-Python translation tasks.
+        level (str, optional): Level of debugging to be performed. Default is "block". The values could be 'line', 'block', 'function'.
+
+  ldb_generate(self, func_sig: str, model: ModelBase, messages: List[Message], prev_func_impl: Optional[str] = None, failed_tests: Optional[str] = None, num_comps: int = 1, temperature: float = 0.0, dataset_type: str = "") -> Union[str, List[str]]
+  Args:
+        func_sig (str): Signature of the function to be generated.
+        model (ModelBase): Model used for code generation. Possible values: 'gpt-3.5-turbo-1106', 'gpt-4-1106-preview', 'StarCoder', 'CodeLlama'.
+        messages (List[Message]): Debugging messages and information.
+        prev_func_impl (str, optional): Implementation of the previous function.
+        failed_tests (str, optional): A failed test (this arg is not used in this function).
+        num_comps (int, optional): Number of completions to generate. Default is 1.
+        temperature (float, optional): Sampling temperature for text generation. Default is 0.0.
+        dataset_type (str, optional): Type of dataset being processed. Possible values: 'HumanEval' for text-to-code tasks, 'TransCoder' for C++-to-Python translation tasks. Default is an empty string.
+  Returns:
+        Union[str, List[str]]: Generated code or list of generated codes.
+"""
+```
+Here is an example for debugging one round:
+```
+# One round debugging
+gen = PyGenerator()
+messages = gen.ldb_debug(prompt, code, test, entry_point, model, "", dataset_type, "block")
+fixed_code, messages = gen.ldb_generate(
+    func_sig=task,
+    model=model,
+    prev_func_impl=code,
+    messages=messages,
+    failed_tests=test,
+    dataset_type=dataset_type,
+)
+```
+For more details, see the example usage in our [demo](https://huggingface.co/spaces/shangdatalab-ucsd/LDB/blob/a77e7968f83d8ec498457f2c1fa1295ccef20e22/demo.py#L73).
+
 ## 🐞 Bugs or Questions?
 
 If you have any questions, feel free to post issues in this repo.
