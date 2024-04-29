@@ -127,7 +127,7 @@ fixed_code, messages = gen.ldb_generate(
     dataset_type=dataset_type,
 )
 ```
-For more details, see the example usage in our [demo](https://huggingface.co/spaces/shangdatalab-ucsd/LDB/blob/a77e7968f83d8ec498457f2c1fa1295ccef20e22/demo.py#L73).
+For more details, see the example usage in our [demo](https://huggingface.co/spaces/shangdatalab-ucsd/LDB).
 
 ## 🐞 Bugs or Questions?
 
