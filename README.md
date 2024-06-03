@@ -137,14 +137,13 @@ If you have any questions, feel free to post issues in this repo.
 
 If you find our work helpful, please cite us:
 ```
-@misc{zhong2024ldb,
-      title={LDB: A Large Language Model Debugger via Verifying Runtime Execution Step-by-step}, 
-      author={Li Zhong and Zilong Wang and Jingbo Shang},
-      year={2024},
-      eprint={2402.16906},
-      archivePrefix={arXiv},
-      primaryClass={cs.SE}
+@inproceedings{zhong2024ldb,
+  title={LDB: A Large Language Model Debugger via Verifying Runtime Execution Step-by-step},
+  author={Li Zhong and Zilong Wang and Jingbo Shang},
+  booktitle={Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics: Findings.},
+  year={2024}
 }
+
 ```
 ## 🙌 Acknowledgement
 Our implementation adapts code from [Reflexion](https://github.com/noahshinn/reflexion) and [staticfg](https://github.com/coetaur0/staticfg). We thank authors of these projects for providing high quality open source code!
