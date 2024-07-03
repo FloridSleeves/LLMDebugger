@@ -154,13 +154,13 @@ class GPTChat(ModelBase):
 
 
 class GPT4(GPTChat):
-    def __init__(self, key):
-        super().__init__("gpt-4-1106-preview", key)
+    def __init__(self, model, key):
+        super().__init__(model, key)
 
 
 class GPT35(GPTChat):
-    def __init__(self, key):
-        super().__init__("gpt-3.5-turbo-0613", key)
+    def __init__(self, model, key):
+        super().__init__(model, key)
 
 
 class VLLMModelBase(ModelBase):
