@@ -16,6 +16,8 @@ This repository contains the code and dataset for our paper [**LDB: A Large Lang
 
 We introduce 🛠️**LDB**, a novel debugging framework that enables LLMs to refine their generated programs with the runtime execution information. Specifically, LDB imitates how human developers debug programs. It segments the programs into basic blocks and tracks the values of intermediate variables after each block throughout the runtime execution. This allows LLMs to concentrate on simpler code units within the overall execution flow, verify their correctness against the task description block by block, and efficiently pinpoint any potential errors.
 
+📢 We update [results](https://github.com/FloridSleeves/LLMDebugger/blob/main/results/ldb/humaneval/reflexion/gpt-4o-2024-05-13.jsonl) of LDB on GPT-4o. It achieves accuracy of **98.2%** based on seeds from Reflexion!
+
 ![image](assets/overview-ldb.png)
 
 ## 📦 Installation
