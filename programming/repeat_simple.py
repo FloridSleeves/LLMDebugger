@@ -42,11 +42,12 @@ def async_main(
         log_path: str,
         verbose: bool,
         is_leetcode: bool = False,
+        port: str = "",
         testfile: str = None,
     ) -> None:
     
     gen = PyGenerator()
-    model = model_factory(model_name)
+    model = model_factory(model_name, port)
 
     print_v = make_printv(verbose)
     
@@ -66,7 +67,8 @@ def run_repeat_simple(
         log_path: str,
         verbose: bool,
         is_leetcode: bool = False,
+        port: str = "",
         testfile: str = None,
     ) -> None:
-    async_main(dataset, model_name, language, max_iters, log_path, verbose, is_leetcode, testfile)
+    async_main(dataset, model_name, language, max_iters, log_path, verbose, is_leetcode, port, testfile)
     print("Accuracy:", count_solved(log_path))

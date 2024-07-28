@@ -168,8 +168,9 @@ class VLLMModelBase(ModelBase):
     Base for huggingface chat models
     """
 
-    def __init__(self, model, port="8000"):
+    def __init__(self, model, port=""):
         super().__init__(model)
+        port = port or "8000"
         self.model = model
         self.vllm_client = OpenAI(api_key="EMPTY", base_url=f"http://localhost:{port}/v1")
         self.tokenizer = AutoTokenizer.from_pretrained(model)
