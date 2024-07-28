@@ -43,10 +43,11 @@ def async_main(
         n_proc: int,
         log_path: str,
         verbose: bool,
+        port = "",
         testfile: str = None,
     ) -> None:
     gen = PyGenerator()
-    model = model_factory(model_name)
+    model = model_factory(model_name, port)
     print_v = make_printv(verbose)
     num_items = len(dataset)
     num_success = 0
@@ -66,7 +67,8 @@ def run_simple(
         n_proc: int,
         log_path: str,
         verbose: bool,
+        port: str = "",
         testfile: str = None,
     ) -> None:
-    async_main(dataset, model_name, pass_at_k, n_proc, log_path, verbose, testfile)
+    async_main(dataset, model_name, pass_at_k, n_proc, log_path, verbose, port, testfile)
     print("Accuracy:", count_solved(log_path))

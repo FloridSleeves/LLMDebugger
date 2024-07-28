@@ -43,9 +43,9 @@ def strategy_factory(strategy: str):
         return kwargs_wrapper
     
     if strategy == "simple":
-        return kwargs_wrapper_gen(run_simple, delete_keys=["max_iters", "seedfile", "port", "level"])
+        return kwargs_wrapper_gen(run_simple, delete_keys=["max_iters", "seedfile", "level"])
     if strategy == "repeat_simple":
-        return kwargs_wrapper_gen(run_repeat_simple, delete_keys=["pass_at_k", "seedfile", "n_proc", "port", "level"])
+        return kwargs_wrapper_gen(run_repeat_simple, delete_keys=["pass_at_k", "seedfile", "n_proc", "level"])
     elif strategy == "ldb":
         return kwargs_wrapper_gen(run_ldb)
     else:
