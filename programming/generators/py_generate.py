@@ -172,7 +172,7 @@ class PyGenerator:
             # Check whether the solution can be executed
             if level == "line":
                 trace_blocks = get_code_traces_line(IMPORT_HEADER + prev_func_impl, failed_test.replace("assert ", "").split("==")[0], entry)
-            if level == "function":
+            elif level == "function":
                 trace_blocks = get_code_traces_function(IMPORT_HEADER + prev_func_impl, failed_test.replace("assert ", "").split("==")[0], entry)
             else:
                 trace_blocks = get_code_traces_block(IMPORT_HEADER + prev_func_impl, failed_test.replace("assert ", "").split("==")[0], entry)
