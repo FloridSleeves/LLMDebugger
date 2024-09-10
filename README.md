@@ -1,4 +1,4 @@
-<img src="assets/ldb-logo5.webp" alt="LDB" width="115" align="left"><div align="center"><h1>Debug like a Human: A Large Language Model Debugger via Verifying Runtime Execution Step-by-step</h1></div>
+<img src="assets/ldb-logo5.webp" alt="LDB" width="115" align="left"><div align="center"><h1>A Large Language Model Debugger via Verifying Runtime Execution Step by Step</h1></div>
 
 <p align="center">
   <a href="https://arxiv.org/abs/2402.16906">
@@ -12,7 +12,7 @@
   </a>
 </p>
 
-This repository contains the code and dataset for our paper [**A Large Language Model Debugger via Verifying Runtime Execution Step-by-step**.(ACL 2024)](https://arxiv.org/abs/2402.16906)
+This repository contains the code and dataset for our paper [**Debug like a Human: A Large Language Model Debugger via Verifying Runtime Execution Step-by-step**.(ACL 2024)](https://arxiv.org/abs/2402.16906)
 
 We introduce 🛠️**LDB**, a novel debugging framework that enables LLMs to refine their generated programs with the runtime execution information. Specifically, LDB imitates how human developers debug programs. It segments the programs into basic blocks and tracks the values of intermediate variables after each block throughout the runtime execution. This allows LLMs to concentrate on simpler code units within the overall execution flow, verify their correctness against the task description block by block, and efficiently pinpoint any potential errors.
 
